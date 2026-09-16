@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FramLab — Innovation & Solutions</title>
+    <title>FramLab — Production Audiovisuelle & Cinéma</title>
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #2563eb;
-            --light: #f8fafc;
-            --text: #334155;
+            --primary: #0a0a0c;
+            --secondary: #16181e;
+            --accent: #e50914;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
         }
 
         * {
@@ -21,28 +22,31 @@
 
         body {
             color: var(--text);
-            background-color: var(--light);
+            background-color: var(--primary);
             line-height: 1.6;
         }
 
+        /* En-tête / Navigation */
         header {
-            background-color: var(--primary);
-            color: white;
-            padding: 1rem 2rem;
+            background-color: rgba(10, 10, 12, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid #222;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
             color: white;
             text-decoration: none;
+            text-transform: uppercase;
         }
 
         .logo span {
@@ -50,10 +54,11 @@
         }
 
         nav a {
-            color: #cbd5e1;
+            color: var(--text-muted);
             text-decoration: none;
             margin-left: 1.5rem;
             font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s;
         }
 
@@ -61,144 +66,282 @@
             color: white;
         }
 
+        /* Hero / Accueil */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
-            color: white;
-            padding: 5rem 2rem;
+            background: linear-gradient(rgba(10, 10, 12, 0.7), rgba(10, 10, 12, 0.9)), url('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            padding: 8rem 2rem;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            color: #94a3b8;
-            max-width: 600px;
-            margin: 0 auto 2rem;
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
         }
 
         .btn {
             background-color: var(--accent);
             color: white;
-            padding: 0.8rem 1.8rem;
-            border-radius: 6px;
+            padding: 0.9rem 2rem;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
             display: inline-block;
-            transition: background 0.3s;
+            transition: transform 0.2s, background 0.3s;
         }
 
         .btn:hover {
-            background-color: #1d4ed8;
+            background-color: #b90710;
+            transform: translateY(-2px);
         }
 
+        /* Sections Générales */
         .container {
             max-width: 1100px;
-            margin: 4rem auto;
+            margin: 5rem auto;
             padding: 0 1.5rem;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 2.5rem;
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
         .card {
-            background: white;
-            padding: 2rem;
+            background: var(--secondary);
+            padding: 2.5rem 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            border: 1px solid #262932;
+            transition: transform 0.3s, border-color 0.3s;
         }
 
         .card:hover {
             transform: translateY(-5px);
+            border-color: var(--accent);
         }
 
         .card h3 {
-            color: var(--primary);
+            color: white;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
         }
 
-        .about-contact {
-            background: white;
+        .card p {
+            color: var(--text-muted);
+        }
+
+        /* Section Films */
+        .film-card {
+            background: var(--secondary);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #262932;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .film-card h3 {
+            color: var(--accent);
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Banner Casting */
+        .casting-section {
+            background: linear-gradient(135deg, #1e1014 0%, var(--secondary) 100%);
+            border: 1px solid var(--accent);
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .casting-section h2 {
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .casting-section p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* Contact & Infos */
+        .contact-box {
+            background: var(--secondary);
             padding: 3rem 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            border: 1px solid #262932;
+        }
+
+        .contact-box h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-box p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .contact-box strong {
+            color: white;
         }
 
         footer {
-            background-color: var(--primary);
-            color: #94a3b8;
+            background-color: #050507;
+            color: var(--text-muted);
             text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+            padding: 2.5rem;
+            margin-top: 6rem;
+            border-top: 1px solid #1a1a20;
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation -->
     <header>
         <a href="#" class="logo">Fram<span>Lab</span></a>
         <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#identite">FramLab</a>
             <a href="#services">Services</a>
-            <a href="#a-propos">À propos</a>
+            <a href="#films">Nos Films</a>
+            <a href="#casting">Casting</a>
+            <a href="#actualites">Actualités</a>
+            <a href="#galerie">Galerie</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>Bienvenue chez FramLab</h1>
-        <p>Des solutions innovantes et sur-mesure pour accompagner la réussite de vos projets.</p>
-        <a href="#contact" class="btn">Nous contacter</a>
+    <!-- Section Accueil / Hero -->
+    <section class="hero" id="accueil">
+        <h1>Là où les histoires prennent vie</h1>
+        <p>Production audiovisuelle, réalisation cinématographique et couverture d'événements à Bamako, Mali.</p>
+        <a href="#casting" class="btn">Rejoindre un Casting</a>
     </section>
 
+    <!-- Section FramLab / Identité -->
+    <div class="container" id="identite">
+        <h2 class="section-title">Notre Vision & Identité</h2>
+        <div style="background: var(--secondary); padding: 3rem; border-radius: 8px; border: 1px solid #262932; text-align: center;">
+            <p style="font-size: 1.2rem; max-width: 800px; margin: auto; color: var(--text-muted);">
+                <strong>FramLab</strong> est une maison de production dédiée à l'excellence visuelle et à la puissance du récit. Nous faisons émerger des histoires captivantes, en mettant en lumière les talents et en offrant des productions à fort impact émotionnel et culturel.
+            </p>
+        </div>
+    </div>
+
+    <!-- Section Services -->
     <div class="container" id="services">
         <h2 class="section-title">Nos Domaines d'Expertise</h2>
         <div class="grid">
             <div class="card">
-                <h3>Service 1</h3>
-                <p>Description détaillée de votre premier service ou expertise phare proposé par FramLab.</p>
+                <h3>Production Audiovisuelle</h3>
+                <p>Production de films, courts métrages, séries et autres créations audiovisuelles captivantes.</p>
             </div>
             <div class="card">
-                <h3>Service 2</h3>
-                <p>Description détaillée de votre second service ou solution technique/professionnelle.</p>
+                <h3>Réalisation & Création</h3>
+                <p>Scénarisation, réalisation, mise en scène et développement complet de projets cinématographiques.</p>
             </div>
             <div class="card">
-                <h3>Service 3</h3>
-                <p>Description de votre accompagnement, conseil ou prestation complémentaire.</p>
+                <h3>Reportages & Événements</h3>
+                <p>Couverture professionnelle d'événements, reportages sur le terrain et tournages sous couverture.</p>
             </div>
         </div>
     </div>
 
-    <div class="container">
+    <!-- Section Nos Films -->
+    <div class="container" id="films">
+        <h2 class="section-title">Nos Films & Productions</h2>
         <div class="grid">
-            <div class="about-contact" id="a-propos">
-                <h2 class="section-title" style="text-align: left;">À propos de FramLab</h2>
-                <p>FramLab est une entreprise dédiée à l'innovation et à l'excellence. Nous aidons nos clients à concrétiser leurs idées grâce à notre savoir-faire unique.</p>
+            <div class="film-card">
+                <h3>Au-delà des liens</h3>
+                <p>Film / Production FramLab</p>
             </div>
-            <div class="about-contact" id="contact">
-                <h2 class="section-title" style="text-align: left;">Contactez-nous</h2>
-                <p><strong>Email :</strong> contact@framlab.com</p>
-                <p style="margin-top: 0.5rem;"><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
-                <p style="margin-top: 0.5rem;"><strong>Adresse :</strong> Votre ville, Pays</p>
+            <div class="film-card">
+                <h3>Allégeance</h3>
+                <p>Film / Production FramLab</p>
+            </div>
+            <div class="film-card">
+                <h3>Prochaines Productions</h3>
+                <p>Projets en cours de développement & pré-production.</p>
             </div>
         </div>
     </div>
 
+    <!-- Section Casting -->
+    <div class="container" id="casting">
+        <div class="casting-section">
+            <h2>Espace Casting</h2>
+            <p>« Vous avez un talent ? Votre histoire commence peut-être ici. »</p>
+            <a href="#contact" class="btn">Postuler à un Casting</a>
+        </div>
+    </div>
+
+    <!-- Section Actualités -->
+    <div class="container" id="actualites">
+        <h2 class="section-title">Actualités</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Tournages & Coulisses</h3>
+                <p>Découvrez les coulisses de nos récentes productions et l'envers du décor de nos plateaux de tournage.</p>
+            </div>
+            <div class="card">
+                <h3>Annonces & Sorties</h3>
+                <p>Restez informés des dates de sortie de nos prochains films, séries et avant-premières.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Galerie -->
+    <div class="container" id="galerie">
+        <h2 class="section-title">Galerie & Making-Of</h2>
+        <div style="background: var(--secondary); padding: 3rem; border-radius: 8px; border: 1px solid #262932; text-align: center;">
+            <p style="color: var(--text-muted);">Photos de tournage et clichés exclusifs du making-of (à venir).</p>
+        </div>
+    </div>
+
+    <!-- Section Contact -->
+    <div class="container" id="contact">
+        <h2 class="section-title">Contactez-nous</h2>
+        <div class="grid">
+            <div class="contact-box">
+                <h3>Coordonnées FramLab</h3>
+                <p><strong>Email :</strong> Contact@framlab.com</p>
+                <p><strong>Téléphone / WhatsApp :</strong> +223 74 30 30 78</p>
+                <p><strong>Localisation :</strong> Bamako, Mali</p>
+            </div>
+            <div class="contact-box">
+                <h3>Travailler avec nous</h3>
+                <p>Que ce soit pour une production, une prestation de reportage ou pour participer à nos castings, n'hésitez pas à nous contacter directement sur WhatsApp ou par email.</p>
+                <a href="https://wa.me/22374303078" target="_blank" class="btn" style="margin-top: 1rem; background-color: #25D366;">Contact WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pied de page -->
     <footer>
-        <p>&copy; 2026 FramLab. Tous droits réservés.</p>
+        <p>&copy; 2026 FramLab — Production Audiovisuelle & Cinéma. Bamako, Mali.</p>
     </footer>
 
 </body>
